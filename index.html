@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карточки</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <ul class="tree" id="tree"></ul>
+    <div class="tree-head">
+      <button type="button" class="btn btn--ghost" id="btn-add-theme">+ технология</button>
+    </div>
+  </div>
+
+  <dialog class="modal" id="modal">
+    <form class="modal__form" id="modal-form" method="dialog">
+      <div class="modal__body" id="modal-body"></div>
+      <div class="modal__actions">
+        <button type="button" class="btn-icon btn-icon--cancel" id="modal-cancel" title="отмена">○</button>
+        <button type="submit" class="btn-icon btn-icon--save" title="сохранить">✓</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

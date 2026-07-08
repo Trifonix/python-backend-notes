@@ -668,6 +668,12 @@ function termColorIndex(term) {
   return Math.abs(h) % 5;
 }
 
+const TAB_VISUAL = '\u00A0'.repeat(4);
+
+function expandTabs(text) {
+  return text.replace(/\\t/g, TAB_VISUAL).replace(/\t/g, TAB_VISUAL);
+}
+
 function formatInline(text) {
   const chunks = [];
   const re = /\*\*([^*]+)\*\*/g;
@@ -685,6 +691,7 @@ function formatInline(text) {
 
 function formatText(text) {
   if (!text) return '';
+  text = expandTabs(text);
   const parts = [];
   const re = /```([\s\S]*?)```/g;
   let last = 0;

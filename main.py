@@ -40,7 +40,11 @@ class Handler(SimpleHTTPRequestHandler):
         super().end_headers()
 
     def log_message(self, format, *args):
-        if args and args[0].startswith('POST'):
+        # Log only POST requests, but be careful: for some internal calls
+        # http.server passes an HTTPStatus object instead of a string as the
+        # first argument, which does not have .startswith and can crash the
+        # server. Convert to str() before checking the prefix.
+        if args and str(args[0]).startswith('POST'):
             super().log_message(format, *args)
 
 if __name__ == '__main__':

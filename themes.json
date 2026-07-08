@@ -45,7 +45,7 @@
             {
               "id": "7",
               "question": "Условная конструкция if",
-              "answer": "",
+              "answer": "```if True:\n\\tprint('Go')\nelse:\n\\tprint(\"Bye\")```\nЕщё в середине может быть **elif**",
               "mark": ""
             }
           ]
